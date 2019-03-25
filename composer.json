@@ -1,0 +1,30 @@
+{
+  "name": "pnoexz/json",
+  "description": "Json library with quality tools in mind",
+  "type": "library",
+  "require": {
+    "php": ">=7.2",
+    "ext-json": "*"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^8.0",
+    "ext-iconv": "*"
+  },
+  "autoload": {
+    "psr-4": {
+      "Pnoexz\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Tests\\": "tests/"
+    }
+  },
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Matias Pino",
+      "email": "pnoexz@gmail.com"
+    }
+  ]
+}
