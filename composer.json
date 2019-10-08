@@ -21,10 +21,12 @@
     }
   },
   "license": "MIT",
-  "authors": [
-    {
-      "name": "Matias Pino",
-      "email": "pnoexz@gmail.com"
-    }
-  ]
+  "scripts": {
+    "unit": "vendor/bin/phpunit",
+    "unit:coverage": "vendor/bin/phpunit --coverage-html coverage"
+  },
+  "authors": [{
+    "name": "Matias Pino",
+    "email": "pnoexz@gmail.com"
+  }]
 }

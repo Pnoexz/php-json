@@ -20,4 +20,18 @@ class DecodeTest extends TestCase
         $this->assertSame($decoded->id, 7139);
         $this->assertTrue($decoded->booleans);
     }
+
+    /**
+     * @test
+     */
+    public function decodesAsArray()
+    {
+        $toDecode = '{"id": 7139, "booleans": true}';
+
+        $decoded = Json::decodeAsArray($toDecode);
+
+        $this->assertIsArray($decoded);
+        $this->assertSame($decoded['id'], 7139);
+        $this->assertTrue($decoded['booleans']);
+    }
 }

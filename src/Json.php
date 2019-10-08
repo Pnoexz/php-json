@@ -74,6 +74,44 @@ class Json
     }
 
     /**
+     * @param string $json
+     * @param bool   $assoc
+     * @param int    $depth
+     * @param int    $options
+     * @return mixed
+     */
+    public static function decodeAsArray(
+        string $json,
+        int $depth = 512,
+        int $options = 0
+    ) {
+        $decoded = \json_decode($json, true, $depth, $options);
+
+        self::assertNoErrors();
+
+        return $decoded;
+    }
+
+    /**
+     * @param string|null $json
+     * @param bool        $assoc
+     * @param int         $depth
+     * @param int         $options
+     * @return mixed|null
+     */
+    public static function decodeNullableAsArray(
+        ?string $json,
+        int $depth = 512,
+        int $options = 0
+    ) {
+        if (is_null($json)) {
+            return null;
+        }
+
+        return self::decodeAsArray($json, $depth, $options);
+    }
+
+    /**
      * @return bool
      * @throws JsonDepthException
      * @throws JsonStateMismatchException
